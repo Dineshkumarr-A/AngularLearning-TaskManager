@@ -1,9 +1,7 @@
 <div>
     <button (click)="onSelectUser()">
         <!-- dynamic binding {} using brackets and property binding using square [] brackets -->
-        <img 
-        [src]="imageUrl()" 
-        [alt]="selectedUser().name" />
-        <span>{{ selectedUser().name }}</span>
+        <img [src]="imageUrl" [alt]="name" />
+        <span>{{ name }}</span>
     </button>
 </div>
