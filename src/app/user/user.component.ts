@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 
 @Component({
@@ -11,14 +11,23 @@ import { Component, Input} from '@angular/core';
 export class UserComponent {
 
   //! -> added to say that value will be set outside the component
+  @Input({required: true}) id!: string;
   @Input({required: true}) avatar!: string;
   @Input({required: true}) name!: string;
 
+  //Using decorator
+  @Output() select = new EventEmitter();
+
+  //Using output function
+  //select = output<string>()
+ 
   get imageUrl()
   {
     return 'assets/users/' + this.avatar; 
   }
 
-  onSelectUser() {  }
+  onSelectUser() { 
+    this.select.emit(this.id);
+   }
 
 }
