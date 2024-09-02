@@ -1,7 +1,7 @@
-<div>
+<app-card>
     <button [class.active]="selected" (click)="onSelectUser()" >
         <!-- dynamic binding {} using brackets and property binding using square [] brackets -->
         <img [src]="imageUrl" [alt]="user.name" />
         <span>{{ user.name }}</span>
     </button>
-</div>
+</app-card>
