@@ -1,17 +1,6 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { User } from './user.model';
 
-// type User = {
-//   id: string;
-//   avatar: string;
-//   name: string;
-// }
-
-
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -24,6 +13,7 @@ export class UserComponent {
 
   //! -> added to say that value will be set outside the component
   @Input({required: true}) user!: User;
+  @Input({required: true}) selected!: boolean;
 
   //Using decorator
   @Output() select = new EventEmitter();
